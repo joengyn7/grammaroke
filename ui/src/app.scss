@@ -1,29 +1,49 @@
+$header-height: 60px;
+
 header {
-  background-color: #4A4A4A;
-  height: 60px;
-}
-
-header * {
-  position: absolute;
-  display: flex;
   width: 100%;
-}
+  height: $header-height;
+  background-color: #4A4A4A;
+  
+  & > div {
+    display: flex;
+    position: absolute;
+    height: $header-height;
+    color: white;
 
-header *:first-child span {
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-  width: min-content;
-  white-space: nowrap;
-}
+    & > text {
+      margin: auto 0;
+    }
 
+    &:first-child {
+      & > text {
+        padding-bottom: 2px;
+        margin-left: 20px;
+        text-decoration: none;
 
-header *:last-child button {
-  width: min-content;
-}
+         & > a {
+          color: white;
+          text-decoration: none;
+        }
 
-header *:last-child span {
-  color: black;
-  width: min-content;
-  white-space: nowrap;
+        & > span {
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+      }
+    }
+    
+    &:last-child {
+      pointer-events: none;
+      width: 100%;
+      
+      & > div {
+        width: min-content;
+        white-space: nowrap;
+        pointer-events: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
 }
