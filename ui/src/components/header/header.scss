@@ -1,0 +1,36 @@
+$header-height: 80px;
+$toolbar-height: 40px;
+
+header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: $header-height;
+    background-color: #4A4A4A;
+    
+  }
+  
+  .nav {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto auto auto 10px;
+  
+    a {
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+  
+    span {
+      margin-left: 20px;
+    }
+  }
+  
+  .song-title {
+    color: white;
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+  }
