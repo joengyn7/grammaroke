@@ -1,6 +1,7 @@
 $header-height: 80px;
 $toolbar-height: 40px;
 
+// Header ------------------------------------------
 header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -12,12 +13,13 @@ header {
 
 .nav {
   color: white;
-  // font-family: 'Roboto Mono', monospace;
   font-size: 20px;
+  font-weight: bold;
   margin: auto auto auto 10px;
 
   a {
     color: white;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     margin-left: 20px;
   }
@@ -30,34 +32,80 @@ header {
 .song-title {
   color: white;
   font-size: 40px;
-  // font-weight: bold;
-  // font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: auto;
 }
+
+// End Header ------------------------------------------
+
+// Toolbar ---------------------------------------------
 
 .toolbar {
   display: flex;
   height: $toolbar-height;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
-  :first-child {
-    margin-left: 30px;
+  button {
+    background-color: white;
+    font-size: 20px;
+    color: #4A4A4A;
+    border: none;
   }
 
-  :nth-child(2) {
-    margin-left: 30px;
+  span {
+    vertical-align: middle;
   }
 
-  :nth-child(3) {
+  #btn1,
+  #btn2 {
+    margin-left: 30px;
+
+    :first-child {
+      margin-right: 10px;
+    }
+  }
+
+  #btn3 {
     margin-left: auto;
     margin-right: 10px;
   }
 
-  :last-child {
+  #btn4 {
     margin-right: 30px
+  }
+
+  .btn-text {
+    font-family: 'Roboto Mono', monospace;
   }
 }
 
+// End Toolbar ------------------------------------------
 
+// End Body ---------------------------------------------
 
+.body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+
+  button {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 18px 200px;
+    margin-top: 600px;
+    background-color: transparent;
+    border: 1px solid #4A4A4A;
+    border-radius: 2px;
+  }
+
+  button:hover {
+    background-color: #C4C4C4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    // color: white;
+  }
+}
+
+// Body -------------------------------------------------
 

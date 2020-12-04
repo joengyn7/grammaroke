@@ -20,12 +20,30 @@ function App() {
 
       {/* Toolbar */}
       <div className="toolbar">
-        <button>1<span>Add Text</span></button>
-        <button>2<span>Style Guides</span></button>
-        <button>3</button>
-        <button>4</button>
+        <button id="btn1">
+          <span class="material-icons">library_add</span>
+          <span className="btn-text">Add Text</span>
+        </button>
+        <button id="btn2"> 
+          <span class="material-icons">border_color</span>
+          <span className="btn-text">Style Guides</span>
+        </button>
+        <button id="btn3">
+          <span class="material-icons">undo</span>
+        </button>
+        <button id="btn4">
+          <span class="material-icons">redo</span>
+        </button>
       </div>
       {/* End Toolbar */}
+
+      {/* Body */}
+        <div className="body">
+          <img src="ui/public/empty.png" alt="empty"></img>
+          <button>Add Text</button>
+        </div>
+      {/* End Body */}
+
     </div>
   );
 }
