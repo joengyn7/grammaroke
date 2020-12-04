@@ -1,3 +1,4 @@
+import empty from "./assets/empty-state.png"
 import "./app.scss"
 const songTitle = '命に嫌われている'
 
@@ -39,7 +40,7 @@ function App() {
 
       {/* Body */}
         <div className="body">
-          <img src="ui/public/empty.png" alt="empty"></img>
+          <img src={empty} alt="empty"></img>
           <button>Add Text</button>
         </div>
       {/* End Body */}
