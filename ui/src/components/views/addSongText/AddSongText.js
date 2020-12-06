@@ -3,7 +3,7 @@ import Toolbar from "../../toolbar/Toolbar"
 import empty from "../../../assets/empty-state.png"
 import "./addSongText.scss"
 
-function AddSongText() {
+function AddSongText({setCurrentView}) {
   const [didClick, setDidClick] = React.useState(false)
   const [text, setText] = React.useState("")
 
@@ -26,6 +26,9 @@ function AddSongText() {
       }
     })
     console.log(stanzas)
+
+
+    setCurrentView("song-text")
   }
 
   return (
@@ -35,7 +38,7 @@ function AddSongText() {
             {didClick 
               ? <>
                   <textarea value={text} onChange={e => {setText(e.target.value)}}/>
-                  <button onClick={clickedSave}>Saved</button> 
+                  <button onClick={clickedSave}>Save</button> 
                 </>
               : <>
                   <img src={empty} alt="empty"></img>
