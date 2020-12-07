@@ -1,0 +1,37 @@
+.song-text {
+    display: grid;
+    grid-template-rows: min-content auto;
+    overflow: hidden;
+}
+
+.stanza-container {
+    height: 100%;
+}
+
+.stanza {
+    // position: relative;
+    display: flex;
+    height: 20%;
+    font-size: 30px;
+    color: gray;
+    transition: height 300ms, font-size 300ms;
+    transition-timing-function: ease-in-out;
+    
+    .stanza-lines {
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 100%;
+
+        span {
+            text-align: center;
+            display: block;
+        }
+    }
+}
+
+.active {
+    // top: 50%;
+    font-size: 50px;
+    color: black;
+    height: 20%;
+}

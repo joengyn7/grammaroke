@@ -3,7 +3,7 @@ import Toolbar from "../../toolbar/Toolbar"
 import empty from "../../../assets/empty-state.png"
 import "./addSongText.scss"
 
-function AddSongText({setCurrentView}) {
+function AddSongText({ setCurrentView }) {
   const [didClick, setDidClick] = React.useState(false)
   const [text, setText] = React.useState("")
 
