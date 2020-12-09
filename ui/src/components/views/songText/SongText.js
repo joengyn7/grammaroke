@@ -6,8 +6,8 @@ import "./songText.scss"
 
 const stanzas = [
     [
-        "幸福も別れも愛情も友情も",
-        "滑稽な夢の戯れで全部カネで買える代物。"
+    "幸福も別れも愛情も友情も",
+    "滑稽な夢の戯れで全部カネで買える代物。"
     ],
     ["明日死んでしまうかもしれない。"],
     ["すべて無駄になるかもしれない。"],
@@ -32,23 +32,16 @@ function SongText() {
         <div className="song-text">
             <Toolbar />
             <div className="scroller">
-                {stanzas.map((stanza, i) =>
-                    i === active
-                        ? <div
-                            className='stanza active'
-                            ref={activeRef}
-                            onClick={() => setActive(i)}>
-                            <div className="stanza-lines">
-                                {stanza.map(line => <span>{line}</span>)}
-                            </div>
+                {stanzas.map((stanza, i) => {
+                    const isActive = i === active 
+                    return <div
+                        className = { isActive ? 'stanza active' : 'stanza'}
+                        ref={ isActive ? activeRef : null}
+                        onClick={() => setActive(i)}>
+                        <div className="stanza-lines">
+                            {stanza.map(line => <span>{line}</span>)}
                         </div>
-                        : <div
-                            className='stanza'
-                            onClick={() => setActive(i)}>
-                            <div className="stanza-lines">
-                                {stanza.map(line => <span>{line}</span>)}
-                            </div>
-                        </div>
+                    </div>}
                 )}
             </div>
         </div>
