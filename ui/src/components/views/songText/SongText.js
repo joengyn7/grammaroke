@@ -8,7 +8,7 @@ const stanzas = [
     [
         "幸福も別れも愛情も友情も",
         "滑稽な夢の戯れで全部カネで買える代物。"
-    ], 
+    ],
     ["明日死んでしまうかもしれない。"],
     ["すべて無駄になるかもしれない。"],
     ["朝も夜も春も秋も"],
@@ -19,30 +19,37 @@ const stanzas = [
     ["本当はそういうことが歌いたい。"]
 ];
 
-// 
-
 function SongText() {
     const [active, setActive] = React.useState(0)
-    console.log(active);
 
-    function onClick(i) {
-        setActive(i);
-    };
+    const activeRef = React.useRef()
+
+    React.useEffect(() => {
+        activeRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
+    }, [active])
 
     return (
         <div className="song-text">
             <Toolbar />
-            <div className="stanza-container">
-                {stanzas.map((stanza, i) => 
-                    <div 
-                        className={`stanza${i === active ? ' active' : ''}`} 
-                        // style={{tranform: `translatey(${i*100}%)`}}
-                        // style={{ transform: `translatey(${i*100}%)` }}
-                        onClick={() => onClick(i)}>
+            <div className="scroller">
+                {stanzas.map((stanza, i) =>
+                    i === active
+                        ? <div
+                            className='stanza active'
+                            ref={activeRef}
+                            onClick={() => setActive(i)}>
                             <div className="stanza-lines">
                                 {stanza.map(line => <span>{line}</span>)}
                             </div>
-                    </div>)}
+                        </div>
+                        : <div
+                            className='stanza'
+                            onClick={() => setActive(i)}>
+                            <div className="stanza-lines">
+                                {stanza.map(line => <span>{line}</span>)}
+                            </div>
+                        </div>
+                )}
             </div>
         </div>
     )
