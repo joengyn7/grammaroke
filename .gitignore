@@ -1,4 +1,7 @@
 .DS_Store
 
+api/node_modules
+api/.env
+
 ui/node_modules
 ui/build
