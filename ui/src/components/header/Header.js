@@ -1,13 +1,15 @@
 import "./header.scss"
-const songTitle = '命に嫌われている'
+import {Link} from "react-router-dom";
+
+const songTitle = 'GRAMMAROKE'
 
 function Header() {
   return (
     <header>
         <div className="nav">
-            <a href="#homepage">Home</a>
+            <Link to="/">Home</Link>
             <span>/</span>
-            <a href="#mysongs">My Songs</a>
+            <Link to="/mysongs">My Songs</Link>
         </div>
         <div className="song-title">
             <div>{songTitle}</div>

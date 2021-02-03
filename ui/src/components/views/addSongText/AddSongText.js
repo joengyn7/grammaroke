@@ -2,10 +2,12 @@ import React from 'react';
 import Toolbar from "../../toolbar/Toolbar"
 import empty from "../../../assets/empty-state.png"
 import "./addSongText.scss"
+import { Redirect } from "react-router-dom";
 
-function AddSongText({ setCurrentView }) {
+function AddSongText() {
   const [didClick, setDidClick] = React.useState(false)
   const [text, setText] = React.useState("")
+  const [redirect, setRedirect] = React.useState(false)
 
   const clickedSave = () => {
     const sanitized = text.split("\n").map(s => s.trim())
@@ -27,10 +29,13 @@ function AddSongText({ setCurrentView }) {
     })
     console.log(stanzas)
 
-
-    setCurrentView("song-text")
+    setRedirect(true)
   }
 
+  if (redirect === true) {
+    return <Redirect to={'/songtext'} />
+  }
+  
   return (
     <div className="AddSongText">
         <Toolbar />
