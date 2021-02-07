@@ -3,10 +3,10 @@ import {Link} from "react-router-dom";
 
 const songTitle = 'GRAMMAROKE'
 
-function Header() {
+function Header({setDrawerOpen}) {
   return (
     <header>
-      <div className="menu"><span class="material-icons">menu</span></div>
+      <button className="menu" onClick={() => setDrawerOpen(true)}><span class="material-icons">menu</span></button>
       
       <div className="nav">
         <div className="link">
