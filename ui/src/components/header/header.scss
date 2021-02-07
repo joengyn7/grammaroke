@@ -1,36 +1,163 @@
-$header-height: 80px;
-$toolbar-height: 40px;
-
 header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    height: $header-height;
-    background-color: #4A4A4A;
-    
+  display: grid;
+  grid-template-columns: min-content auto;
+  width: 100%;
+  height: 80px;
+  color: white;
+  background-color: #4A4A4A;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+
+  .menu {
+    margin: auto auto auto 30px;
   }
-  
+
   .nav {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    margin: auto auto auto 10px;
-  
-    a {
-      color: white;
-      font-family: 'Roboto', sans-serif;
-      text-decoration: none;
-      margin-left: 20px;
-    }
-  
-    span {
-      margin-left: 20px;
-    }
+    display: none;
   }
-  
+
   .song-title {
-    color: white;
-    font-size: 40px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    letter-spacing: 3px;
     margin: auto;
+    place-self: center;
   }
+}
+
+@media only screen and (min-width: 768px) {
+  header{
+    grid-template-columns: 25% auto 25%;
+
+    .song-title {
+      font-size: 35px;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: 50% 50%;
+
+      .link {
+        margin: auto;
+      }
+
+      a {
+        display: none;
+      }
+    }
+  }
+} 
+
+@media only screen and (min-width: 1224px) {
+  header{
+    grid-template-columns: 25% auto 25%;
+
+    .song-title {
+      font-size: 35px;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: 50% 50%;
+
+      .link {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin: auto;
+        
+        div {
+        white-space: nowrap;
+        margin-top: auto;
+        margin-bottom: auto;
+        // margin-left: 10px;
+        // margin: auto 0 auto 10px;
+        }
+      }
+
+      a {
+        display: grid;
+        color: white;
+        text-decoration: none;
+
+      }
+    }
+  }
+} 
+
+
+  // ul {
+  //   display: none;
+  //   position: fixed;
+  //   z-index: 1;
+  //   margin: 0;
+  //   padding: 1em;
+  //   width: 33%;
+  //   height: 100vh;
+  //   font-size: 1.2em;
+  //   font-weight: bold;
+  //   background: #575757;
+    
+  //   li {
+  //     list-style: none;
+  //   }
+
+  //   a { // How come this a tag is still here after changing to Links? 
+  //     display: block;
+  //     padding: 1em;
+  //     color: white;
+  //     text-decoration: none;
+  //   }
+  // }
+  
+ 
+
+  // .profile {
+  //   // margin: auto 30px auto auto;
+  //   display: none;
+  // }
+
+  // @media only screen and (min-width: 768px) {
+  //   .menu {
+  //     display: none;
+  //   }
+
+  //   ul {
+  //     display: flex;
+  //     position: relative;
+  //     z-index: 0;
+  //     padding: 0;
+  //     width: auto;
+  //     height: auto;
+  //     font-size: 1em;
+  //     background: #4A4A4A;
+  //     margin-left: 20px;
+
+  //     li {
+  //       margin: auto;
+  //     }
+
+  //     .close {
+  //       display: none;
+  //     }
+  //   }
+
+  //   .profile {
+  //     // margin: auto 30px auto auto;
+  //     display: flex;
+
+  //     div {
+  //       margin-top: auto;
+  //       margin-bottom: auto;
+  //     }
+  //   }
+  // }
+
+ 
+  

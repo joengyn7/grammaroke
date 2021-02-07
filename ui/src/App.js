@@ -1,5 +1,7 @@
 import React from 'react'
 import Header from "./components/header/Header"
+import Home from "./components/views/home/Home"
+import MySongs from "./components/views/mySongs/MySongs"
 import AddSongText from "./components/views/addSongText/AddSongText"
 import SongText from "./components/views/songText/SongText"
 import "./app.scss"
@@ -22,11 +24,11 @@ function App() {
           <Route path="/addsongtext">
             <AddSongText/>
           </Route>
-          <Route path="/test">
-            <div>Test</div>
+          <Route path="/mysongs">
+            <MySongs/>
           </Route>
           <Route path="/">
-            <div>Home</div>
+            <Home/>
           </Route>
         </Switch>
       </BrowserRouter>
