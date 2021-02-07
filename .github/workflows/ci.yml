@@ -30,3 +30,15 @@ jobs:
         target: ~/app/build
         strip_components: 2 # ignore path structure
         rm: true
+  restart-app:
+    name: Restart App
+    needs: [ui-build]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Restart App
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USERNAME }}
+        password: ${{ secrets.REMOTE_PASSWORD }}
+        script: docker stop grammaroke-nginx && docker start grammaroke-nginx 
