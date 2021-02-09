@@ -10,6 +10,14 @@ header {
 
   .menu {
     margin: auto auto auto 30px;
+    background-color: #4A4A4A;
+    border: none;
+    padding-top: 3px;
+
+    span {
+      color: white;
+      font-size: 35px;
+    }
   }
 
   .nav {
@@ -38,14 +46,21 @@ header {
 
     .nav {
       display: grid;
-      grid-template-columns: 50% 50%;
+      grid-template-columns: auto auto;
 
       .link {
         margin: auto;
-      }
+        padding: 20px;
+        color: white;
+        // background-color: black; //toggle to see click area
 
-      a {
-        display: none;
+        span {
+          font-size: 25px;
+        }
+
+        div {
+          display: none;
+        }
       }
     }
   }
@@ -56,7 +71,7 @@ header {
     grid-template-columns: 25% auto 25%;
 
     .song-title {
-      font-size: 35px;
+      font-size: 40px;
     }
 
     .menu {
@@ -65,27 +80,29 @@ header {
 
     .nav {
       display: grid;
-      grid-template-columns: 50% 50%;
+      grid-template-columns: auto auto;
 
       .link {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        margin: auto;
-        
-        div {
-        white-space: nowrap;
-        margin-top: auto;
-        margin-bottom: auto;
-        // margin-left: 10px;
-        // margin: auto 0 auto 10px;
-        }
-      }
-
-      a {
-        display: grid;
-        color: white;
+        display: flex;
         text-decoration: none;
+        align-items: center;
+        margin: auto;
+        padding: 20px;
+        color: white;
+        vertical-align: top;
+        // background-color: black; //toggle to see click area
 
+        span {
+          display: inline-block;
+          font-size: 20px;
+          margin-right: 10px;
+        }
+
+        div {
+          display: inline-block;
+          // margin-top: auto;
+          // margin-bottom: auto;
+        }
       }
     }
   }

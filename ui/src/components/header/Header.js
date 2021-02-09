@@ -9,14 +9,14 @@ function Header({setDrawerOpen}) {
       <button className="menu" onClick={() => setDrawerOpen(true)}><span class="material-icons">menu</span></button>
       
       <div className="nav">
-        <div className="link">
-          <div><span class="material-icons">home</span></div>
-          <div><Link to="/">Home</Link></div>
-        </div>
-        <div className="link">
-          <div><span class="material-icons">library_music</span></div>
-          <div><Link to="/mysongs">My Songs</Link></div>
-        </div>
+        <Link to="/home" className="link">
+          <span class="material-icons">home</span>
+          <div className="text">Home</div>
+        </Link>
+        <Link to="/mysongs" className="link">
+          <span class="material-icons">library_music</span>
+          <div>My Songs</div>
+        </Link>
       </div>
 
       <div className="song-title">
@@ -24,14 +24,14 @@ function Header({setDrawerOpen}) {
       </div>
 
       <div className="nav">
-        <div className="link">
-          <div><span class="material-icons">account_circle</span></div>
+        <Link className="link">
+          <span class="material-icons">account_circle</span>
           <div><a>Profile</a></div>
-        </div>
-        <div className="link">
-          <div><span class="material-icons">settings</span></div>
+        </Link>
+        <Link className="link">
+          <span class="material-icons">settings</span>
           <div><a>Settings</a></div>
-        </div> 
+        </Link> 
       </div>
     </header>
   );

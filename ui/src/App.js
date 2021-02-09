@@ -14,7 +14,7 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [drawerOpen, setDrawerOpen] = React.useState(true)
+  const [drawerOpen, setDrawerOpen] = React.useState(false)
 
   return (
     <div className="app">
