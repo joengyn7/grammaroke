@@ -1,0 +1,44 @@
+name: Grammaroke
+on: # "When I push to the branch 'main', do these 'jobs'"
+  push:
+    branches: main
+jobs:
+  ui-build: #name of job, you can change this
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout #checking out, aka first pull of the latest code on main branch
+      uses: actions/checkout@v2
+    - name: Setup Node.js #vm running ubuntu sets up node for npm commands
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.14
+    - name: Install Dependenceis
+      working-directory: ./ui
+      run: npm i --production
+    - name: Build UI
+      working-directory: ./ui
+      run: npm run build
+      env:
+        CI: false # TODO fix suppress build warnings
+    - name: Copy Build to Remote
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USERNAME }}
+        password: ${{ secrets.REMOTE_PASSWORD }}
+        source: ui/build/*
+        target: ~/app/build
+        strip_components: 2 # ignore path structure
+        rm: true
+  restart-app:
+    name: Restart App
+    needs: [ui-build]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Restart App
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USERNAME }}
+        password: ${{ secrets.REMOTE_PASSWORD }}
+        script: docker stop grammaroke-nginx && docker start grammaroke-nginx 
