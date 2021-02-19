@@ -5,6 +5,7 @@ import Home from "./components/views/home/Home"
 import MySongs from "./components/views/mySongs/MySongs"
 import AddSongText from "./components/views/addSongText/AddSongText"
 import SongText from "./components/views/songText/SongText"
+import warning from "./assets/warning.png"
 import "./app.scss"
 import {
   BrowserRouter,
@@ -22,21 +23,27 @@ function App() {
         <Drawer drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen}/>
         <div className="grid-container">
           <Header setDrawerOpen={setDrawerOpen}/>
-          <Switch>
-            <Route path="/songtext">
-              <SongText/>
-            </Route>
-            <Route path="/addsongtext">
-              <AddSongText/>
-            </Route>
-            <Route path="/mysongs">
-              <MySongs/>
-            </Route>
-            <Route path="/">
-              <Home/>
-            </Route>
-          </Switch>
-        </div>
+          <div className="view-container">
+            <Switch>
+              <Route path="/songtext">
+                <SongText/>
+              </Route>
+              <Route path="/addsongtext">
+                <AddSongText/>
+              </Route>
+              <Route path="/mysongs">
+                <MySongs/>
+              </Route>
+              <Route path="/">
+                <Home/>
+              </Route>
+            </Switch>
+          </div>
+          <div className="warning">
+                    <img src={warning} alt="empty"></img>
+                    <span>This site is still under development.<br />For updates, please visit the Github <a href="https://github.com/joengyn7/grammaroke">here</a>.</span>
+                </div>
+          </div>
       </BrowserRouter>
     </div>
   );
