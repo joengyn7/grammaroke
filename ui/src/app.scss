@@ -14,14 +14,12 @@
 }
 
 .warning {
-    padding: 0 20px 0 30px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
     background-color: #5d5d5d;
     color: white;
+    padding: 0 20px 0 30px;
     
     img {
         width: 50px;

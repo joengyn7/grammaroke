@@ -5,7 +5,7 @@ import "./home.scss"
 function Home() {
     return (
         <div className="home">
-            <div className="text">
+            <div className="welcome">
                 <h1>Welcome <br />to Grammaroke.</h1>
                 <div>
                     <span class="material-icons first">fiber_manual_record</span>
@@ -21,7 +21,7 @@ function Home() {
                 </div>
                 <div>
                     <span class="material-icons fourth">fiber_manual_record</span>
-                    <span>Check out the full Case Study<a href="https://kendojo.myportfolio.com/grammaroke">here.</a></span>
+                    <span className="case-study">Check out the full Case Study<a href="https://kendojo.myportfolio.com/grammaroke">&nbsp;here.</a></span>
                 </div>
             </div>
             <div className="lyrics-view">
@@ -37,6 +37,7 @@ function Home() {
                 </div>
             </div>
             <div className="video">
+                <h3>Annotation Demo Video</h3>
                 <video width="100%" height="auto" controls >  
                     <source src={video} type="video/mp4"/>
                 </video>
