@@ -1,50 +1,36 @@
 import React from 'react';
-import "./mySongs.scss"
-import album1 from "../../../assets/album1.jpg"
-import album2 from "../../../assets/album2.jpg"
-import album3 from "../../../assets/album3.jpg"
-import search from "../../../assets/search.svg"
+import SongCard from '../../songCard/SongCard'
+// import "./mySongs.scss" Replaced with module
+import {grid} from './mySongs.module.scss'
 
+const fakeData = [
+    {
+        imgSrc: "https://lh3.googleusercontent.com/proxy/LnsRYZwA7A-vXl99sq-orFRAJuA-LOTcbHYiU3NF5eTuZ61HBh3Pf6qyAFtlJBw6iI-qXRYf87Vb8PMrf6ZXNui7AmBQ3FnRPRV-HA",
+        songTitle: "One",
+        artist: "Kano"
+    },
+    {
+        imgSrc: "https://lh3.googleusercontent.com/proxy/zb21C5qhg1GpaLTAYKIH1qM8YAY62HxJHhpQhjRNLDq6j3kNU28P9WTQL7jaM3jOJzHV--b_voU0Rua9a0HNrTy2AalHfv-JlRjilg",
+        songTitle: "Two",
+        artist: "Kano"
+    },
+    {
+        imgSrc: "https://lh3.googleusercontent.com/proxy/sjlFCdypnPGjdHCCrrVY4MQLIpk2OFHMBLZn3bNlLUFFgz_eCBJJoGMpmvw-LfeQpPOxOTlbCwsUd2jG6nQwRA6MBTT4L2QQOXVUV6EC",
+        songTitle: "Three",
+        artist: "Kano"
+    }]
 
 function MySongs() {
     return (
-        <div className="my-songs">
-            <div className='search-drawer'>
-                <div className="search-bar">
-                    <form action="/action_page.php">
-                        <input type="search" placeholder="Search" name="search"></input>
-                    </form>
-                </div>
-                <button type="button" className="filter">Filter<span class="material-icons">filter_list</span></button>    
-                <button type="button" className="add-song"><span class="material-icons">add_box</span>Add Song</button>
+        <div>
+            <div>
+                <input type="text"/>
+                <span>All Songs</span>
+                <button>View</button>
             </div>
-            <div className="song-list">
-            <table>
-                <tr>
-                    <th id="art">Art</th>
-                    <th>Title</th>
-                    <th>Artist</th>
-                    <th>Last Modified</th>
-                </tr>
-                <tr>
-                    <td><img src={album1} className="album-art"></img></td>
-                    <td>命に嫌われている</td>
-                    <td>カンザキイオリ</td>
-                    <td>24-Nov-20 1:38pm</td>
-                </tr>
-                <tr>
-                    <td><img src={album2} className="album-art"></img></td>
-                    <td>1997</td>
-                    <td>Regal Lily</td>
-                    <td>14-Nov-20 5:12pm</td>
-                </tr>
-                <tr>
-                    <td><img src={album3} className="album-art"></img></td>
-                    <td>気になるあの子</td>
-                    <td>相対性理論</td>
-                    <td>19-Oct-20 7:18am</td>
-                </tr>
-                </table>
+                
+            <div className={grid}>
+                {fakeData.map(({imgSrc, songTitle, artist}) => <SongCard imgSrc={imgSrc} songTitle={songTitle} artist={artist}/>)}
             </div>
         </div>
     )
