@@ -1,3 +1,6 @@
+# TODO figure this out 
+.eslintcache
+
 .DS_Store
 
 api/node_modules

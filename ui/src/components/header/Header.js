@@ -9,7 +9,7 @@ function Header({setDrawerOpen}) {
       <button className="menu" onClick={() => setDrawerOpen(true)}><span class="material-icons">menu</span></button>
       
       <div className="nav">
-        <Link to="/home" className="link">
+        <Link to="/" className="link">
           <span class="material-icons">home</span>
           <div className="text">Home</div>
         </Link>
