@@ -6,7 +6,7 @@ function Home() {
     return (
         <div className="home">
             <div className="welcome">
-                <h1>Welcome <br />to Grammaroke.</h1>
+                <h1>Welcome <br/>to Grammaroke.</h1>
                 <div>
                     <span class="material-icons first">fiber_manual_record</span>
                     <span>Study and sing along to your favorite songs.</span>

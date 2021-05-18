@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from "react-router-dom";
 import "./drawer.scss"
 
+//TODO Make drawer close after clicking link
 function Drawer({drawerOpen, setDrawerOpen}) {
     return (
         <div className="drawer-container" style={{ transform: drawerOpen ? undefined : 'translatex(-100%)' }}>
