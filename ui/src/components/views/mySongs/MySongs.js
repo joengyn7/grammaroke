@@ -7,6 +7,7 @@ import one from '../../../assets/one.jpeg'
 import two from '../../../assets/two.jpeg'
 import three from '../../../assets/three.png'
 
+// TODO Connect API to use real data
 const fakeData = [
     {
         imgSrc: one,
