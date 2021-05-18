@@ -1,7 +1,6 @@
 INSERT INTO users (email, name) VALUES 
-	('jojo@gmail.com', 'jojo'),
-	('nicko.com', 'nick');
+	('xjoenx@gmail.com', 'jojo');
 
-INSERT INTO songs (user_id, name, lyrics) VALUES 
-	(1, 'song1', 'lyrics here'),
-	(1, 'song2', 'lyrics here');
+INSERT INTO songs (user_id, art_id, title, lyrics) VALUES 
+	(1, '1qaegNiG92Gq2RMoNyNz3YgEAYIh7GSnU', 'song1', 'lyrics here'),
+	(1, '1VdZNc8a1z68mdoMtxLjKb92AxZpAwNvG', 'song2', 'lyrics here');
