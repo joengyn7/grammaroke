@@ -75,7 +75,7 @@
             margin: 10px 5px 0 auto;
 
             img {
-                width: 120%;
+                width: 110%;
             }
         }
     }
@@ -83,9 +83,13 @@
     .song-grid {
         display: grid;
         grid-template-columns: auto auto auto;
-        column-gap: 10px;
-        row-gap: 10px;
-        padding: 10px 40px;
+        column-gap: 20px;
+        row-gap: 20px;
+        padding: 0px 40px;
+    }
+
+    hr {
+        margin-bottom: 20px;
     }
 }
 
