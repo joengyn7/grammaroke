@@ -1,7 +1,7 @@
 import React from 'react';
 import SongCard from '../../songCard/SongCard'
 import './mySongs.scss'
-import view_list from '../../../assets/view_list.png'
+import view_list from '../../../assets/view_list.svg'
 
 import one from '../../../assets/one.jpeg'
 import two from '../../../assets/two.jpeg'
@@ -15,12 +15,27 @@ const fakeData = [
         artist: "Kano Kano Kano"
     },
     {
-        imgSrc: one,
+        imgSrc: two,
         songTitle: "Two Two Two",
         artist: "Kano"
     },
     {
+        imgSrc: three,
+        songTitle: "Three Three Three",
+        artist: "Kano"
+    },
+    {
         imgSrc: one,
+        songTitle: "One One One",
+        artist: "Kano Kano Kano"
+    },
+    {
+        imgSrc: two,
+        songTitle: "Two Two Two",
+        artist: "Kano"
+    },
+    {
+        imgSrc: three,
         songTitle: "Three Three Three",
         artist: "Kano"
     }]
@@ -29,7 +44,7 @@ function MySongs() {
     return (
         <div className="my-songs">
             <div className="sub-header">
-                <input type="text" placeholder="Search song title, artist, ..."/>
+                <input type="search" class="material-icons" placeholder="search"></input>
                 <span>All Songs</span>
                 <button><img src={view_list}/></button>
             </div>
